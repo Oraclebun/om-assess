@@ -26,8 +26,8 @@ class PlanDetail(models.Model):
                                   blank=True, null=True)
     price = models.DecimalField(max_digits=8, decimal_places=3,
                                 blank=False)
-    no_of_biodata = models.IntegerField(blank=False, null=False)
-    no_of_emp_e_doc = models.IntegerField(blank=False, null=False)
+    no_of_biodata = models.IntegerField(blank=True, null=True)
+    no_of_emp_e_doc = models.IntegerField(blank=True, null=True)
     no_of_subaccount = models.IntegerField(blank=False, null=False)
     no_of_subdomain_website = models.IntegerField(blank=False, null=False, default=1)
     no_sales_enquiries = models.CharField(blank=True, max_length=20)

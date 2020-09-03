@@ -7,3 +7,10 @@ h6{
     display: flex;
     align-items: center;
 }
+
+.popular-box{
+    display: flex;
+    background-color: #579ad5;
+    color: white;
+    justify-content: center;
+}

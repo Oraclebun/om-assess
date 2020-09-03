@@ -18,9 +18,9 @@ Subscription Plans Home Page
       <label for="inputPlan"></label>
       <select id="inputPlan" name="query" class="form-control">
         <!--<option value="">Choose one of below plans...</option>-->
-        <option value="biodata-crm-solution">Biodata & CRM Solution Plan(Save &gt; 21%)</option>
-        <option value="biodata-only">Biodata Plan Only</option>
-        <option value="crm-only">CRM Solution Plan Only</option>
+        <option value="biodata & crm solution">Biodata & CRM Solution Plan(Save &gt; 21%)</option>
+        <option value="biodata plan">Biodata Plan Only</option>
+        <option value="crm only">CRM Solution Plan Only</option>
       </select>
     </div>
     <div class="form-group col-sm-4">
@@ -35,38 +35,34 @@ Subscription Plans Home Page
 </form>
 </div>
 
-<div class="row">
+<div class="row row-cols-1">
 <div class="card-deck mt-5">
-  <div class="card">
-    
-    <div class="card-body">
-      <h5 class="card-title">Card title</h5>
-      <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-    </div>
-    <div class="card-footer">
-      <small class="text-muted">Last updated 3 mins ago</small>
-    </div>
-  </div>
-  <div class="card">
-    
-    <div class="card-body">
-      <h5 class="card-title">Card title</h5>
-      <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-    </div>
-    <div class="card-footer">
-      <small class="text-muted">Last updated 3 mins ago</small>
-    </div>
-  </div>
-  <div class="card">
 
+{% for plan in plans%}
+  <div class="card">
     <div class="card-body">
-      <h5 class="card-title">Card title</h5>
-      <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+      <h5 class="card-title">{{plan.plan_type|upper}}</h5>
+      <h5 class="card-title">{{plan.name|truncatechars:23}}</h5>
+      <p>{{plan.subscription_period}} Months Plan</p>
+      {%if plan.plan_type.name != "Standard" %}
+      <hr>
+      {% endif %}
+    {%if plan.plan_type.name == "Standard" %}
+    <div class="popular-box">
+    <p class="mt-1 mb-1">Most Popular Plan</p>
+    </div>
+    {% endif %}
+      <h4>S${{plan.price|floatformat:0}}/mo</h4>
+      <p class="card-text">{{plan.no_of_biodata}} Biodata Plan</p>
+      <p class="card-text">{{plan.no_of_subaccount}} Sub Account User</p>
+      <p class="card-text">{{plan.no_of_subdomain_website}} Sub Domain Website</p>
+      <p class="card-text">{{plan.no_sales_enquiries}} Sales Enquiries</p>
     </div>
     <div class="card-footer">
       <small class="text-muted">Last updated 3 mins ago</small>
     </div>
   </div>
+{% endfor %}
 </div>
 </div>
 {%endblock%}
