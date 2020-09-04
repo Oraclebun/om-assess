@@ -1,3 +1,42 @@
+.btn-blue{
+    background-color: #9bbfe9;
+}
+
+.btn-green{
+    background-color: #aad08c;
+}
+
+.btn-yellow{
+    background-color: #ffda5c;
+}
+
+.card-body{
+    display: grid;
+}
+
+.card-footer{
+    border-top: none;
+    background-color: inherit;
+    justify-items: center;
+}
+
+.card-custom-header{
+    display: grid;
+    justify-items: center;
+}
+
+.card-custom-blue{
+    background-color: #ddebf7;
+}
+
+.card-custom-green{
+    background-color: #e3efda;
+}
+
+.card-custom-yellow{
+    background-color: #fff3cb;
+}
+
 h6{
     color: black
 }
@@ -13,4 +52,6 @@ h6{
     background-color: #579ad5;
     color: white;
     justify-content: center;
+    margin-left: -20px;
+    margin-right: -20px;
 }

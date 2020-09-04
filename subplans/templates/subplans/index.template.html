@@ -36,30 +36,40 @@ Subscription Plans Home Page
 </div>
 
 <div class="row row-cols-1">
-<div class="card-deck mt-5">
+<div class="card-deck mt-3">
 
 {% for plan in plans%}
-  <div class="card">
+  <div class="card card-custom-{{plan.color_scheme}}">
     <div class="card-body">
+    <div class="card-custom-header">
       <h5 class="card-title">{{plan.plan_type|upper}}</h5>
       <h5 class="card-title">{{plan.name|truncatechars:23}}</h5>
       <p>{{plan.subscription_period}} Months Plan</p>
-      {%if plan.plan_type.name != "Standard" %}
-      <hr>
-      {% endif %}
+    </div>
     {%if plan.plan_type.name == "Standard" %}
     <div class="popular-box">
     <p class="mt-1 mb-1">Most Popular Plan</p>
     </div>
+    {%else%}
+      <hr>
     {% endif %}
-      <h4>S${{plan.price|floatformat:0}}/mo</h4>
+      <div class="price-box d-flex justify-content-center">
+      <h4 class="mt-3 price-text">S${{plan.price|floatformat:0}}/mo</h4>
+      </div>
+      <div class="mt-5 ml-5">
       <p class="card-text">{{plan.no_of_biodata}} Biodata Plan</p>
+      {%if 'CRM' in plan.name.name %}
+      <p class="card-text">{{plan.no_of_emp_e_doc}} Employer E-Document</p>
+      {% endif %}
       <p class="card-text">{{plan.no_of_subaccount}} Sub Account User</p>
       <p class="card-text">{{plan.no_of_subdomain_website}} Sub Domain Website</p>
+    {% if plan.no_sales_enquiries and plan.no_sales_enquiries.strip %}
       <p class="card-text">{{plan.no_sales_enquiries}} Sales Enquiries</p>
-    </div>
-    <div class="card-footer">
-      <small class="text-muted">Last updated 3 mins ago</small>
+    {% endif %}
+      </div>
+    </div>  <!--end card body-->
+    <div class="card-footer d-flex justify-content-center">
+      <button class="btn btn-{{plan.color_scheme}}" type="submit">Subscribe</button>
     </div>
   </div>
 {% endfor %}
