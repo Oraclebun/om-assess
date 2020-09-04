@@ -20,7 +20,7 @@ class PlanType(models.Model):
 class PlanDetail(models.Model):
     name = models.ForeignKey(PlanTitle, on_delete=models.CASCADE)
     plan_type = models.ForeignKey(PlanType, on_delete=models.CASCADE)
-    subscription_period = models.IntegerField(blank=False, 
+    subscription_period = models.IntegerField(blank=False,
                                               null=False, default=3)
     savings = models.DecimalField(max_digits=2, decimal_places=0,
                                   blank=True, null=True)
@@ -29,7 +29,8 @@ class PlanDetail(models.Model):
     no_of_biodata = models.IntegerField(blank=True, null=True)
     no_of_emp_e_doc = models.IntegerField(blank=True, null=True)
     no_of_subaccount = models.IntegerField(blank=False, null=False)
-    no_of_subdomain_website = models.IntegerField(blank=False, null=False, default=1)
+    no_of_subdomain_website = models.IntegerField(blank=True, null=True,
+                                                  default=1)
     no_sales_enquiries = models.CharField(blank=True, max_length=20)
     color_scheme = models.CharField(blank=False, max_length=20)
 

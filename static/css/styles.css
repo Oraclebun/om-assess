@@ -10,10 +10,6 @@
     background-color: #ffda5c;
 }
 
-.card-body{
-    display: grid;
-}
-
 .card-footer{
     border-top: none;
     background-color: inherit;
@@ -37,8 +33,25 @@
     background-color: #fff3cb;
 }
 
+.ct-overflow {
+  overflow: hidden;
+  max-height: 1.3em; 
+  text-align: center;
+}
+
+/*hr tag style*/
+.divider-1{
+    border-top: 2px solid black;
+    width: 50%;
+}
+
 h6{
     color: black
+}
+
+.package-content{
+    display: grid;
+    justify-content: center;
 }
 
 .page-header{
