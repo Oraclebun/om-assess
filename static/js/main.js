@@ -3,25 +3,25 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
 const planSelectElement = document.querySelector('#inputPlan'); //select input for plan
 const periodSelectElement = document.querySelector('#inputPeriod'); //select input for period
-let planSelectedIndex = planSelectElement.selectedIndex;
-let periodSelectedIndex = periodSelectElement.selectedIndex;
+let planSelectedIndex = planSelectElement.selectedIndex;        // get selected plan
+let periodSelectedIndex = periodSelectElement.selectedIndex;    //get selected period
 
-if(localStorage.getItem('planSelectedIndex')){
-    planSelectElement.selectedIndex=localStorage.getItem('planSelectedIndex');    
+if(sessionStorage.getItem('planSelectedIndex')){
+    planSelectElement.selectedIndex=sessionStorage.getItem('planSelectedIndex');    
 }
 
-if(localStorage.getItem('periodSelectedIndex')){
-    periodSelectElement.selectedIndex=localStorage.getItem('periodSelectedIndex');    
+if(sessionStorage.getItem('periodSelectedIndex')){
+    periodSelectElement.selectedIndex=sessionStorage.getItem('periodSelectedIndex');    
 }
 
 planSelectElement.addEventListener('change', (event) => {
-    localStorage.setItem('planSelectedIndex',event.target.selectedIndex);
+    sessionStorage.setItem('planSelectedIndex',event.target.selectedIndex);
     event.target.form.submit();
   
 });
 
 periodSelectElement.addEventListener('change', (event) => {
-    localStorage.setItem('periodSelectedIndex',event.target.selectedIndex);
+    sessionStorage.setItem('periodSelectedIndex',event.target.selectedIndex);
     event.target.form.submit();
   
 });

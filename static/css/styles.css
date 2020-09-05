@@ -49,6 +49,11 @@ h6{
     color: black
 }
 
+html *
+{
+  font-family: serif;
+}
+
 .package-content{
     display: grid;
     justify-content: center;
