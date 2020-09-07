@@ -7,7 +7,7 @@ Subscription Plans Home Page
 
 {%block content%}
 <div class="alert-primary mt-3 pl-3 page-header">
-  <h6> Choose New Subscription Plan</h6>
+  <h5> Choose New Subscription Plan</h5>
 </div>
 
 
@@ -43,9 +43,12 @@ Subscription Plans Home Page
   <div class="card card-custom-{{plan.color_scheme}}">
     <div class="card-body">
     <div class="card-custom-header">
-      <h5 class="card-title">{{plan.plan_type|upper}}</h5>
-      <h5 class="card-title ct-overflow">{{plan.name}}</h5>
-      <p>{{plan.subscription_period}} Months Plan</p>
+      <h5 class="card-title"><strong>{{plan.plan_type|upper}}</strong></h5>
+      <h6 class="card-title plan-name"><strong>{{plan.name}}</strong></h6>
+      <p class="plan-period">{{plan.subscription_period}} Months Plan 
+      {% if plan.savings != None %}
+      (Save {{plan.savings}}%)</p>
+      {% endif %}
     </div>
     {%if plan.plan_type.name == "Standard" %}
     <div class="popular-box">

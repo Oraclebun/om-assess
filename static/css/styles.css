@@ -33,19 +33,13 @@
     background-color: #fff3cb;
 }
 
-.ct-overflow {
-  overflow: hidden;
-  max-height: 1.3em; 
-  text-align: center;
-}
-
 /*hr tag style*/
 .divider-1{
     border-top: 2px solid black;
     width: 50%;
 }
 
-h6{
+h5{
     color: black
 }
 
@@ -65,6 +59,14 @@ html *
     align-items: center;
 }
 
+.plan-name{
+    text-align: center;
+}
+
+.plan-period{
+    text-align: center;
+}
+
 .popular-box{
     display: flex;
     background-color: #579ad5;
@@ -76,8 +78,25 @@ html *
 
 /* Extra large devices (large laptops and desktops, 2000px and up) */
 
-@media only screen and (min-width: 2000px) {
+@media only screen and (min-width: 1441px) {
   .container {
     max-width: 93%;
   }
+}
+
+/* For scaling typography starting from 900px up to 3900px*/
+@media screen and (min-width: 901px){
+  html { 
+      font-size: calc( 16px + (24 - 16) * (100vw - 900px) /(3900 - 900) ); 
+      }
+}
+
+/* Small to mid  devices (large phones) */
+@media screen and (min-width: 576px) and (max-width:768px){
+  .container{
+      max-width: 95%;
+  }
+
+  html { 
+      font-size: 1rem; }
 }
