@@ -26,28 +26,23 @@ periodSelectElement.addEventListener('change', (event) => {
   
 });
 
-
 //if the selected plan is CRM Sol only,
-if (planSelectedIndex = 2){
+if (planSelectedIndex == 2){
 // Get a reference to the parent node
-let parentDiv0 = document.getElementsByClassName("e-doc")[0].parentNode;
-let parentDiv1 = document.getElementsByClassName("e-doc")[1].parentNode;
-let parentDiv2 = document.getElementsByClassName("e-doc")[2].parentNode;
 
-//Get all the elements with e-doc info
-let eDocNum0 = document.getElementsByClassName("e-doc")[0];
-let eDocNum1 = document.getElementsByClassName("e-doc")[1];
-let eDocNum2 = document.getElementsByClassName("e-doc")[2];
+let parentDiv = [];
+let eDocNum = [];
+let subAcc = [];
+for (let i = 0; i < 3; i++) {
+    // Get parent node of elements with e-doc info
+    parentDiv[i] = document.getElementsByClassName("e-doc")[i].parentNode;
+    //Get all the elements with e-doc info
+    eDocNum[i] = document.getElementsByClassName("e-doc")[i];
+    //Get all the elements with sub-account info
+    subAcc[i] = document.getElementsByClassName("sub-acc")[i];
+    parentDiv[i].insertBefore(subAcc[i], eDocNum[i]);
+}
 
-//Get all the elements with sub-account info
-let subAcc0 = document.getElementsByClassName("sub-acc")[0];
-let subAcc1 = document.getElementsByClassName("sub-acc")[1];
-let subAcc2 = document.getElementsByClassName("sub-acc")[2];
-
-//move the location of sub-account before e-doc
-parentDiv0.insertBefore(subAcc0, eDocNum0);
-parentDiv1.insertBefore(subAcc1, eDocNum1);
-parentDiv2.insertBefore(subAcc2, eDocNum2);
 }
 
 
