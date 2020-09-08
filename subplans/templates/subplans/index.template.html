@@ -47,7 +47,8 @@ Subscription Plans Home Page
       <h6 class="card-title plan-name"><strong>{{plan.name}}</strong></h6>
       <p class="plan-period">{{plan.subscription_period}} Months Plan 
       {% if plan.savings != None %}
-      (Save {{plan.savings}}%)</p>
+      <span class="save-percent">(Save {{plan.savings}}%)</span>
+      </p>
       {% endif %}
     </div>
     {%if plan.plan_type.name == "Standard" %}

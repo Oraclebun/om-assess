@@ -76,27 +76,48 @@ html *
     margin-right: -20px;
 }
 
-/* Extra large devices (large laptops and desktops, 2000px and up) */
-
-@media only screen and (min-width: 1441px) {
-  .container {
-    max-width: 93%;
-  }
+.save-percent{
+    display: inline;
 }
 
-/* For scaling typography starting from 900px up to 3900px*/
-@media screen and (min-width: 901px){
+/* Display % savings in a new line for the below screen width*/
+@media screen and (min-width: 650px) and (max-width: 815px) {
+.save-percent{
+    display: block;
+}
+}
+
+/* For scaling typography starting from 1441px up to 3900px*/
+/*min font size = 16px*/
+/*max font size = 32px*/
+/*min screen width = 1441px*/
+/*max screen width = 4000px*/
+@media screen and (min-width: 1440px){
   html { 
-      font-size: calc( 16px + (24 - 16) * (100vw - 900px) /(3900 - 900) ); 
+      font-size: calc( 16px + (32 - 16) * (100vw - 1441px) /(4000 - 1441) ); 
       }
 }
 
 /* Small to mid  devices (large phones) */
-@media screen and (min-width: 576px) and (max-width:768px){
+@media screen and (min-width: 576px) and (max-width:767.98px){
   .container{
       max-width: 95%;
   }
 
-  html { 
-      font-size: 1rem; }
+}
+
+/* Mid to large devices (tablets and laptops) */
+
+@media only screen and (min-width: 768px)  and (max-width:1199.98px){
+  .container {
+    max-width: 90%;
+  }
+}
+
+/* Extra large devices (large laptops and desktops) */
+
+@media only screen and (min-width: 1200px) {
+  .container {
+    max-width: 85%;
+  }
 }
