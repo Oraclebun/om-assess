@@ -89,10 +89,38 @@ html *
 }
 }
 
-@media only screen and (min-width: 1441px) {
+
+@media only screen and (min-width: 63em) and (max-width: 106em) {
 html {
-  font-size: calc(0.75vw + 0.75vh + .5vmin);
+  font-size: calc(0.55vw + 0.45vh + 0.25vmax);
 }
+}
+
+@media only screen and (min-width: 79em) and (max-width: 106em) and (aspect-ratio: 8/5) {
+html {
+  font-size: calc(0.7vw + 0.3vh + 0.3vmax);
+}
+}
+
+
+@media only screen and (min-width: 106em) and (max-width: 244em) {
+html {
+  font-size: calc(0.625vw + 0.375vh + 0.25vmax);
+}
+}
+
+
+@media (min-width: 250em) {
+  html {
+    font-size: 44px;
+  }
+}
+
+@media only screen and (min-width: 575px) {
+.card-deck .card {
+      margin-right: 0.78125vw;
+      margin-left: 0.78125vw;
+  }
 }
 
 /* Small to mid  devices (large phones) */
@@ -105,27 +133,12 @@ html {
 
 /* Mid to large devices (tablets and laptops) */
 
-@media only screen and (min-width: 768px)  and (max-width:1199.98px){
+@media only screen and (min-width: 768px) {
   .container {
-    max-width: 90%;
+    max-width: 85%;
   }
   
 }
 
-/* Extra large devices (large laptops and desktops) */
 
-@media only screen and (min-width: 1200px) {
-  .container {
-    max-width: 85%;
-  }
-}
 
-/* Extra large devices (large laptops and desktops) */
-
-@media only screen and (min-width: 1281px) {
-  .card-deck .card {
-      margin-right: 0.78125vw;
-      margin-left: 0.78125vw;
-  }
-
-}
