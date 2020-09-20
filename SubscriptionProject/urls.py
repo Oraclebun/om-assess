@@ -19,5 +19,6 @@ import subplans.views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', subplans.views.index, name='home_page_route')
+    path('', subplans.views.index, name='home_page_route'),
+    path('change-plans', subplans.views.changeplan, name='change_plan_route')
 ]

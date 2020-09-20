@@ -1,0 +1,144 @@
+
+.btn-blue{
+    background-color: #9bbfe9;
+}
+
+.btn-green{
+    background-color: #aad08c;
+}
+
+.btn-yellow{
+    background-color: #ffda5c;
+}
+
+.card-footer{
+    border-top: none;
+    background-color: inherit;
+    justify-items: center;
+}
+
+.card-custom-header{
+    display: grid;
+    justify-items: center;
+}
+
+.card-custom-blue{
+    background-color: #ddebf7;
+}
+
+.card-custom-green{
+    background-color: #e3efda;
+}
+
+.card-custom-yellow{
+    background-color: #fff3cb;
+}
+
+/*hr tag style*/
+.divider-1{
+    border-top: 2px solid black;
+    width: 50%;
+}
+
+h5{
+    color: black
+}
+
+html *
+{
+  font-family: serif;
+}
+
+.package-content{
+    display: grid;
+    justify-content: center;
+}
+
+.page-header{
+    height: 3rem;
+    display: flex;
+    align-items: center;
+}
+
+.plan-name{
+    text-align: center;
+}
+
+.plan-period{
+    text-align: center;
+    font-size: 0.85rem;
+}
+
+.popular-box{
+    display: flex;
+    background-color: #579ad5;
+    color: white;
+    justify-content: center;
+    margin-left: -1.25rem;
+    margin-right: -1.25rem;
+}
+
+.save-percent{
+    display: inline;
+}
+
+/* Display % savings in a new line for the below screen width*/
+@media screen and (min-width: 650px) and (max-width: 815px) {
+.save-percent{
+    display: block;
+}
+}
+
+
+@media only screen and (min-width: 63em) and (max-width: 106em) {
+html {
+  font-size: calc(0.55vw + 0.45vh + 0.25vmax);
+}
+}
+
+@media only screen and (min-width: 79em) and (max-width: 106em) and (aspect-ratio: 8/5) {
+html {
+  font-size: calc(0.7vw + 0.3vh + 0.3vmax);
+}
+}
+
+
+@media only screen and (min-width: 106em) and (max-width: 244em) {
+html {
+  font-size: calc(0.625vw + 0.375vh + 0.25vmax);
+}
+}
+
+
+@media (min-width: 250em) {
+  html {
+    font-size: 44px;
+  }
+}
+
+@media only screen and (min-width: 575px) {
+.card-deck .card {
+      margin-right: 0.78125vw;
+      margin-left: 0.78125vw;
+  }
+}
+
+/* Small to mid  devices (large phones) */
+@media screen and (min-width: 576px) and (max-width:767.98px){
+  .container{
+      max-width: 95%;
+  }
+
+}
+
+/* Mid to large devices (tablets and laptops) */
+
+@media only screen and (min-width: 768px) {
+  .container {
+    max-width: 85%;
+  }
+  
+}
+
+
+

@@ -14,17 +14,17 @@ if(sessionStorage.getItem('periodSelectedIndex')){
     periodSelectElement.selectedIndex=sessionStorage.getItem('periodSelectedIndex');    
 }
 
-planSelectElement.addEventListener('change', (event) => {
-    sessionStorage.setItem('planSelectedIndex',event.target.selectedIndex);
-    event.target.form.submit();
+//planSelectElement.addEventListener('change', (event) => {
+//    sessionStorage.setItem('planSelectedIndex',event.target.selectedIndex);
+    //event.target.form.submit();
   
-});
+//});
 
-periodSelectElement.addEventListener('change', (event) => {
-    sessionStorage.setItem('periodSelectedIndex',event.target.selectedIndex);
-    event.target.form.submit();
+//periodSelectElement.addEventListener('change', (event) => {
+//    sessionStorage.setItem('periodSelectedIndex',event.target.selectedIndex);
+//    //event.target.form.submit();
   
-});
+//});
 
 //if the selected plan is CRM Sol only,
 if (planSelectedIndex == 2){

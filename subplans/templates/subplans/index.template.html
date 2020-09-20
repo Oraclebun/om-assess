@@ -11,93 +11,160 @@ Subscription Plans Home Page
 </div>
 
 
-<div class="ml-3 mb-5">
+<div class="empty">
 <form method="GET">
-  <div class="form-row">
-    <div class="form-group col-sm-4">
+    <div class="form-group">
       <label for="inputPlan"></label>
-      <select id="inputPlan" name="query" class="form-control">
+      <select id="inputPlan" name="query" class="form-control" onchange="changePlan()">   
         <!--<option value="">Choose one of below plans...</option>-->
         <option value="biodata & crm solution plan">Biodata & CRM Solution Plan(Save &gt; 21%)</option>
         <option value="biodata plan">Biodata Plan Only</option>
         <option value="crm solution plan">CRM Solution Plan Only</option>
       </select>
     </div>
-    <div class="form-group col-sm-4">
+    <div class="form-group">
       <label for="inputPeriod"></label>
-      <select id="inputPeriod" name="period" class="form-control">
+      <select id="inputPeriod" name="period" class="form-control" onchange="changePlan()">  
         <option value="3" selected>3 months</option>
         <option value="6">6 months (Save 5%)</option>
         <option value="12">12 months (Save 10%)</option>
       </select>
     </div>
-  </div>
 </form>
 </div>
 
-<div class="row row-cols-1">
-<div class="col-12">
-<div class="card-deck mt-3">
+<!--start card deck-->
+<div class="card-deck">
 
-{% for plan in plans%}
-  <div class="card card-custom-{{plan.color_scheme}}">
-    <div class="card-body">
-    <div class="card-custom-header">
-      <h5 class="card-title"><strong>{{plan.plan_type|upper}}</strong></h5>
-      <h6 class="card-title plan-name"><strong>{{plan.name}}</strong></h6>
-      <p class="plan-period">{{plan.subscription_period}} Months Plan 
-      {% if plan.savings != None %}
-      <span class="save-percent">(Save {{plan.savings}}%)</span>
+  <div class="card card-custom-yellow">
+    
+    <div class="card-header">
+      <h5 class="plan-type-0"><strong>BASIC</strong></h5>
+      <h6 class="plan-name-0"><strong>Biodata &amp; CRM Solution Plan</strong></h6>
+      <p class="plan-period-0">3 Months Plan 
+      <span class="save-percent-0">(Save 21%)</span>
       </p>
-      {% endif %}
     </div>
-    {%if plan.plan_type.name == "Standard" %}
-    <div class="popular-box">
-    <p class="mt-1 mb-1">Most Popular Plan</p>
-    </div>
-    {%else%}
-      <hr class="divider-1">
-    {% endif %}
-      <div class="d-flex justify-content-center">
-      <h4 class="mt-3">S${{plan.price|floatformat:0}}/mo</h4>
+    
+    
+      <hr>
+    
+      <div class="price">
+      <h4 class="mt-3">S$220/mo</h4>
       </div>
-      <div class="mt-5 package-content">
-      {%if 'Biodata' in plan.name.name %}
-      <p class="card-text">{{plan.no_of_biodata}} Biodata Plan</p>
-      {% endif %}
-
-      {% if plan.name.name == "CRM Solution Plan" %}
-      <p class="card-text">Sales Summary</p>
-      <p class="card-text">Status Summary</p>
-      {% endif %}
-
-      {%if 'CRM' in plan.name.name %}
-      <p class="card-text e-doc">{{plan.no_of_emp_e_doc}} Employer E-Document</p>
-      {% endif %}
-      <p class="card-text sub-acc">{{plan.no_of_subaccount}} Sub Account User</p>
-      {%if 'Biodata' in plan.name.name %}
-      <p class="card-text">{{plan.no_of_subdomain_website}} Sub Domain Website</p>
-      {% endif %}
-
-    {% if plan.no_sales_enquiries and plan.no_sales_enquiries.strip %}
-      <p class="card-text">{{plan.no_sales_enquiries}} Sales Enquiries</p>
-    {% endif %}
-
+      <div class="package-content">
+      <p class="card-text">100 Biodata Plan</p>
+      <p class="card-text e-doc">100 Employer E-Document</p>
+      <p class="card-text sub-acc">10 Sub Account User</p>
+      <p class="card-text">1 Sub Domain Website</p>
       </div>
-    </div>  <!--end card body-->
-    <div class="card-footer d-flex justify-content-center py-4">
-      <button class="btn btn-{{plan.color_scheme}}" type="submit">Subscribe</button>
+      
+    <div class="card-footer">
+      <button class="btn btn-yellow" type="submit">Subscribe</button>
     </div>
   </div>
-{% endfor %}
-</div>
-</div>
-</div>
+
+  <div class="card card-custom-blue">
+
+    <div class="card-header">
+      <h5 class="plan-type-1"><strong>STANDARD</strong></h5>
+      <h6 class="plan-name-1"><strong>Biodata &amp; CRM Solution Plan</strong></h6>
+      <p class="plan-period-1">3 Months Plan 
+      <span class="save-percent-1">(Save 22%)</span>
+      </p>
+      
+    </div>
+    
+    <div class="popular-box">
+    <p>Most Popular Plan</p>
+    </div>
+    
+      <div class="price">
+      <h4 class="mt-3">S$280/mo</h4>
+      </div>
+    
+      <div class="package-content">  
+      <p class="card-text">200 Biodata Plan</p>
+      <p class="card-text e-doc">200 Employer E-Document</p>
+      <p class="card-text sub-acc">15 Sub Account User</p>
+      <p class="card-text">1 Sub Domain Website</p>
+      </div>
+    <div class="card-footer">
+      <button class="btn btn-blue" type="submit">Subscribe</button>
+    </div>
+  </div>
+
+  <div class="card card-custom-green">
+    
+    <div class="card-header">
+      <h5 class="plan-type-2"><strong>PREMIUM</strong></h5>
+      <h6 class="plan-name-2"><strong>Biodata &amp; CRM Solution Plan</strong></h6>
+      <p class="plan-period-2">3 Months Plan 
+      
+      <span class="save-percent-2">(Save 23%)</span>
+      </p>
+      
+    </div>
+    
+      <hr class="divider">
+    
+      <div class="price">
+      <h4 class="mt-3">S$340/mo</h4>
+      </div>
+      <div class="package-content">
+      
+      <p class="card-text">300 Biodata Plan</p>
+      <p class="card-text e-doc">300 Employer E-Document</p>
+      <p class="card-text sub-acc">20 Sub Account User</p>
+      <p class="card-text">1 Sub Domain Website</p>
+     
+      </div>
+   
+    <div class="card-footer">
+      <button class="btn btn-green" type="submit">Subscribe</button>
+    </div>
+  </div>  <!--ends green card-->
+
+</div> <!--end card-deck-->
+
 <p class="mt-3"> **Your newly purchased plan will only take effect after your current subscription expires. </p>
 {%endblock%}
 
 
-
 {%block js%}
 <script src="{% static '/js/main.js' %}"></script>
+
+<script>
+function changePlan() {
+
+    var home_route = '/change-plans';
+    var searchPlan=document.getElementById("inputPlan").value;
+    var searchPeriod=document.getElementById("inputPeriod").value;
+    
+    searchPlan = encodeURIComponent(searchPlan);
+    var url = home_route+"?query="+searchPlan+"&period="+searchPeriod;
+
+    const myHeaders = new Headers();
+    const myRequest = new Request(url, {
+    method: 'GET',
+    headers: myHeaders,
+    mode: 'cors',
+    cache: 'default',
+    });
+    
+    //changeDisplay
+    fetch(myRequest).then(response => response.json()).then(function(json){
+        console.log(json);
+        console.log(json.plans);
+        for (let i=0; i<3; i++){
+            console.log(json.plans[i].plan_type);
+            document.querySelector('.plan-type-'+i).innerText = json.plans[i].plan_type;
+            document.querySelector('.plan-name-'+i).innerText = json.plans[i].name;
+            document.querySelector('.plan-period-'+i).innerText = json.plans[i].subscription_period;
+        }
+        });
+  
+}
+</script>
+
 {% endblock %}

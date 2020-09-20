@@ -1,143 +1,156 @@
 
+.container{
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.alert-primary{
+  color: #004085;
+  background-color: #cce5ff;
+  border-color: #b8daff;
+  height: 3rem;
+  display: flex;
+  align-items: center;
+}
+
+.btn {
+    display: inline-block;
+    font-weight: 400;
+    color: #212529;
+    text-align: center;
+    vertical-align: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-color: transparent;
+    border: 1px solid transparent;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    border-radius: .25rem;
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+.btn:not(:disabled):not(.disabled) {
+    cursor: pointer;
+}
+
+[type="button"]:not(:disabled), [type="reset"]:not(:disabled), [type="submit"]:not(:disabled), button:not(:disabled) {
+    cursor: pointer;
+}
+
 .btn-blue{
     background-color: #9bbfe9;
+}
+
+.btn-yellow {
+    background-color: #ffda5c;
 }
 
 .btn-green{
     background-color: #aad08c;
 }
 
-.btn-yellow{
-    background-color: #ffda5c;
-}
-
-.card-footer{
-    border-top: none;
-    background-color: inherit;
-    justify-items: center;
-}
-
-.card-custom-header{
-    display: grid;
-    justify-items: center;
+.card-custom-yellow{
+  display: grid;
+  justify-items: center;
+  background-color: #fff3cb;
+  grid-template-rows: 30% 5% 10% auto 1fr;
+  /*grid-auto-rows: minmax(130px, auto);*/
+  grid-gap: 2%;
 }
 
 .card-custom-blue{
-    background-color: #ddebf7;
+  display: grid;
+  justify-items: center;
+  background-color: #ddebf7;
+  grid-template-rows: 30% 5% 10% auto 1fr;
+  grid-gap: 2%;
 }
 
 .card-custom-green{
-    background-color: #e3efda;
+  display: grid;
+  justify-items: center;
+  background-color: #e3efda;
+  grid-template-rows: 30% 5% 10% auto 1fr;
+  grid-gap: 2%;
 }
 
-.card-custom-yellow{
-    background-color: #fff3cb;
+.card-deck{
+ display: grid;  
+ grid-template-columns: 33% 33% 33%;
+ grid-gap: 2%;
+ justify-content: center;
 }
 
-/*hr tag style*/
-.divider-1{
-    border-top: 2px solid black;
-    width: 50%;
+.card-header {
+  text-transform: capitalize;
+  grid-row: 1/2;
+  align-self: center;
+  text-align: center;
 }
 
-h5{
-    color: black
-}
-
-html *
-{
-  font-family: serif;
-}
-
-.package-content{
-    display: grid;
-    justify-content: center;
-}
-
-.page-header{
-    height: 3rem;
-    display: flex;
-    align-items: center;
-}
-
-.plan-name{
-    text-align: center;
-}
-
-.plan-period{
-    text-align: center;
-    font-size: 0.85rem;
+.divider{
+  grid-row: 2/3;
 }
 
 .popular-box{
-    display: flex;
-    background-color: #579ad5;
-    color: white;
-    justify-content: center;
-    margin-left: -1.25rem;
-    margin-right: -1.25rem;
+  grid-row: 2/3;
+  background-color: #579ad5;
+  color: white;
+  width: 100%;
+  text-align: center;
+  align-self: center;
 }
 
-.save-percent{
-    display: inline;
+.price {
+  grid-row: 3/4;
+  align-self: center;
 }
 
-/* Display % savings in a new line for the below screen width*/
-@media screen and (min-width: 650px) and (max-width: 815px) {
-.save-percent{
+.package-content{
+  grid-row: 4/5;
+}
+
+.card-footer{
+  grid-row: 5/6;
+  align-self:center;
+}
+
+form{
+  display: grid;
+  grid-template-columns: 25% 25%;
+  margin-top: 2%;
+  margin-bottom: 2%;
+}
+
+hr {
+    border-top: 2px solid black;
+    border-left: none;
+    border-right: none;
+    border-bottom: none;
+    width: 50%;
+}
+
+.plan-type{
+  margin-bottom:1.25rem;  
+}
+
+.plan-name{
+  margin-top:1.25rem;
+  margin-bottom:1.25rem;
+}
+
+.plan-period{
+  margin-top:1.25rem;
+}
+
+@media screen and (max-width: 36em) {
+  .card-deck{
     display: block;
-}
-}
-
-
-@media only screen and (min-width: 63em) and (max-width: 106em) {
-html {
-  font-size: calc(0.55vw + 0.45vh + 0.25vmax);
-}
-}
-
-@media only screen and (min-width: 79em) and (max-width: 106em) and (aspect-ratio: 8/5) {
-html {
-  font-size: calc(0.7vw + 0.3vh + 0.3vmax);
-}
-}
-
-
-@media only screen and (min-width: 106em) and (max-width: 244em) {
-html {
-  font-size: calc(0.625vw + 0.375vh + 0.25vmax);
-}
-}
-
-
-@media (min-width: 250em) {
-  html {
-    font-size: 44px;
   }
-}
-
-@media only screen and (min-width: 575px) {
-.card-deck .card {
-      margin-right: 0.78125vw;
-      margin-left: 0.78125vw;
-  }
-}
-
-/* Small to mid  devices (large phones) */
-@media screen and (min-width: 576px) and (max-width:767.98px){
-  .container{
-      max-width: 95%;
-  }
-
-}
-
-/* Mid to large devices (tablets and laptops) */
-
-@media only screen and (min-width: 768px) {
-  .container {
-    max-width: 85%;
-  }
-  
 }
 
 
