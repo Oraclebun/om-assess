@@ -1,6 +1,6 @@
-from django.shortcuts import render, HttpResponse
+from django.shortcuts import render
 from django.db.models import Q
-from .models import PlanTitle, PlanType, PlanDetail
+from .models import PlanDetail
 from django.http import JsonResponse
 
 # Create your views here.

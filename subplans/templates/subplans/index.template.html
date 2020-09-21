@@ -53,6 +53,7 @@ Subscription Plans Home Page
       <h4 class="price-0">S$220/mo</h4>
       </div>
       <div class="package-content-0">
+      <div class="child-package">
       <p class="card-text bio-plan-0">100 Biodata Plan</p>
       <p class="sales-sum-0"></p>
       <p class="status-sum-0"></p>
@@ -60,6 +61,7 @@ Subscription Plans Home Page
       <p class="card-text sub-acc-0">10 Sub Account User</p>
       <p class="card-text sub-dom-0">1 Sub Domain Website</p>
       <p class="card-text sales-enq-0"></p>
+      </div>
       </div>
       
     <div class="card-footer-0">
@@ -86,6 +88,7 @@ Subscription Plans Home Page
       </div>
     
       <div class="package-content-1">  
+      <div class="child-package">
       <p class="card-text bio-plan-1">200 Biodata Plan</p>
       <p class="sales-sum-1"></p>
       <p class="status-sum-1"></p>
@@ -93,6 +96,7 @@ Subscription Plans Home Page
       <p class="card-text sub-acc-1">15 Sub Account User</p>
       <p class="card-text sub-dom-1">1 Sub Domain Website</p>
       <p class="card-text sales-enq-1"></p>
+      </div>
       </div>
     <div class="card-footer-1">
       <button class="btn btn-blue" type="submit">Subscribe</button>
@@ -119,7 +123,7 @@ Subscription Plans Home Page
       <h4 class="price-2">S$340/mo</h4>
       </div>
       <div class="package-content-2">
-      
+      <div class="child-package">
       <p class="card-text bio-plan-2">300 Biodata Plan</p>
       <p class="sales-sum-2"></p>
       <p class="status-sum-2"></p>
@@ -127,6 +131,7 @@ Subscription Plans Home Page
       <p class="card-text sub-acc-2">20 Sub Account User</p>
       <p class="card-text sub-dom-2">1 Sub Domain Website</p>
       <p class="card-text sales-enq-2"></p>
+      </div>
       </div>
    
     <div class="card-footer-2">
@@ -176,12 +181,12 @@ function changePlan() {
             document.querySelector('.price-'+i).innerText = 'S$'+parseFloat(json.plans[i].price).toFixed(0)+'/mo';
             if (json.plans[i].biodata_no == null){
                 document.querySelector('.bio-plan-'+i).style.display = 'none';
-                document.querySelector('.sales-sum-'+i).style.display = 'inherit';
-                document.querySelector('.status-sum-'+i).style.display = 'inherit';
+                document.querySelector('.sales-sum-'+i).style.display = 'block';
+                document.querySelector('.status-sum-'+i).style.display = 'block';
                 document.querySelector('.sales-sum-'+i).innerText = 'Sales Summary';
                 document.querySelector('.status-sum-'+i).innerText = 'Status Summary';
             }else {
-                document.querySelector('.bio-plan-'+i).style.display = 'inherit';
+                document.querySelector('.bio-plan-'+i).style.display = 'block';
                 document.querySelector('.sales-sum-'+i).style.display = 'none';
                 document.querySelector('.status-sum-'+i).style.display = 'none';
                 document.querySelector('.bio-plan-'+i).innerText = json.plans[i].biodata_no +' Biodata Plan';
@@ -189,20 +194,31 @@ function changePlan() {
             if (json.plans[i].emp_e_doc == null){
                 document.querySelector('.e-doc-'+i).style.display = 'none';
             }else {
-                document.querySelector('.e-doc-'+i).style.display = 'inherit';
+                document.querySelector('.e-doc-'+i).style.display = 'block';
                 document.querySelector('.e-doc-'+i).innerText = json.plans[i].emp_e_doc +' Employer E-Document';
             }
             if (json.plans[i].subdomain == null){
                 document.querySelector('.sub-dom-'+i).style.display = 'none';
             }else {
-                document.querySelector('.sub-dom-'+i).style.display = 'inherit';
+                document.querySelector('.sub-dom-'+i).style.display = 'block';
                 document.querySelector('.sub-dom-'+i).innerText = json.plans[i].subdomain +' Sub Domain Website';
             }
             if (json.plans[i].enquiries == ''){
                 document.querySelector('.sales-enq-'+i).style.display = 'none';
             }else {
-                document.querySelector('.sales-enq-'+i).style.display = 'inherit';
+                document.querySelector('.sales-enq-'+i).style.display = 'block';
                 document.querySelector('.sales-enq-'+i).innerText = json.plans[i].enquiries +' Sales Enquiries';
+            }
+            if (document.querySelector('#inputPlan').selectedIndex==2){
+                    // Get parent node of element with e-doc info
+                    parentDiv = document.querySelector(".e-doc-"+i).parentNode;
+                    //Get the element with e-doc info
+                    eDocNum = document.querySelector(".e-doc-"+i);
+                    //Get the element with sub-account info
+                    subAcc = document.querySelector(".sub-acc-"+i);
+                    //Perform the swap
+                    parentDiv.insertBefore(subAcc, eDocNum);
+                
             }
         }
         });

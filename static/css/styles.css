@@ -188,6 +188,11 @@
     background-color: #e3efda;
 }
 
+.child-package{
+    display: inline-block;
+    text-align: left;
+}
+
 form{
   display: grid;
   grid-template-columns: 33% 33%;
@@ -257,6 +262,67 @@ html {
   .card-deck{
     display: block;
   }
+  form{
+    display: block;
+  }
+  .btn{
+      margin-bottom: 5%;
+  }
+.card-header-0{
+    border-bottom: 1px solid #fff3cb;
+}
+.card-header-1{
+    border-bottom: 1px solid #ddebf7;
+}
+.card-header-2{
+    border-bottom: 1px solid #e3efda;
+}
+.divider-0{
+    border-top: 1px solid #fff3cb;
+    border-bottom: 1px solid #fff3cb;
+}
+.divider-1{
+    border-top: 1px solid #ddebf7;
+    border-bottom: 1px solid #ddebf7;
+}
+.divider-2{
+    border-top: 1px solid #e3efda;
+    border-bottom: 1px solid #e3efda;
+}
+.price-box-0{
+    border-top: 1px solid #fff3cb;
+    border-bottom: 1px solid #fff3cb;
+}
+.price-box-1{
+    border-top: 1px solid #ddebf7;
+    border-bottom: 1px solid #ddebf7;
+}
+.price-box-2{
+    border-top: 1px solid #e3efda;
+    border-bottom: 1px solid #e3efda;
+}
+
+.package-content-0{
+    border-top: 1px solid #fff3cb;
+    border-bottom: 1px solid #fff3cb;
+}
+.package-content-1{
+    border-top: 1px solid #ddebf7;
+    border-bottom: 1px solid #ddebf7;
+}
+.package-content-2{
+    border-top: 1px solid #e3efda;
+    border-bottom: 1px solid #e3efda;
+}
+
+.card-header-0,.card-header-1,.card-header-2 {
+    margin-top: 7%;
+}
+
+.card-footer-0,.card-footer-1,.card-footer-2{
+    margin-bottom: 7%;
+}
+
 }
 
 select{
